@@ -57,6 +57,7 @@ namespace TouchController
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             dispatcherTimer.Start();
 
+            // select device
             activeTouchDevice = new MidiTouchDevice(new int[] { 48, 50, 49, 51, 52, 54, 53 });
             //activeTouchDevice = new bHapticsTouchDevice();
 
@@ -137,7 +138,8 @@ namespace TouchController
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            client = new SocketIO("http://dog.ewi.utwente.nl:3000");
+            // select websocket url
+            client = new SocketIO("http://dog.ewi.utwente.nl:3000"); 
             Trace.WriteLine("WindowLoaded");
 
 
